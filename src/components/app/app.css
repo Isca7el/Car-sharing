@@ -1,0 +1,16 @@
+.app{
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.app-body{
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+}
+
+.app-content{
+  width: 800px;
+  
+}

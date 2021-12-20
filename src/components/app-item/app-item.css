@@ -1,0 +1,33 @@
+.add-item{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  position: relative;
+}
+
+.add-item-title{
+  margin: 10px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+  text-align: center;
+  color: #0062bd;
+}
+
+.add-item-characters{
+  font-weight: 300;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+img{
+ text-align: center;
+}
+
+.add-item-price{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-weight: 700;
+  font-size: 22px;
+}

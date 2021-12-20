@@ -1,0 +1,19 @@
+.app-header-list{
+  padding: 0 20px;
+  margin: 0;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #283891;
+}
+
+.app-header-item{
+  list-style-type: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
