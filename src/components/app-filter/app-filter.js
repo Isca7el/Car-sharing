@@ -12,31 +12,33 @@ const AppFilter = (props) => {
         <aside className="app-filter-class-wrapper">
           <label>
             <input type="checkbox"
-              value="econom"
+              value="classify"
+              id="Эконом"
               className="app-filter-class-input"
               onClick={handleCheckbox}/>
             Эконом</label>
           <label>
             <input type="checkbox"
-              value="medium"
+              value="classify"
+              id="Средний"
               className="app-filter-class-input"
               onClick={handleCheckbox} />
             Средний</label>
           <label>
             <input type="checkbox"
-              value="busines"
+              value="classify"
               className="app-filter-class-input"
               onClick={handleCheckbox} />
             Бизнес</label>
           <label>
             <input type="checkbox"
-              value="jeep"
+              value="classify"
               className="app-filter-class-input"
               onClick={handleCheckbox} />
             Внедорожник</label>
           <label>
             <input type="checkbox"
-              value="miniwan"
+              value="classify"
               className="app-filter-class-input"
               onClick={handleCheckbox} />
             Минивен</label>
@@ -45,14 +47,16 @@ const AppFilter = (props) => {
       <div className="app-filter-transmission">
         <h3 className="app-filter-transmission-title">Трансмиссия</h3>
         <aside className="app-filter-transmission-wrapper">
-          <label htmlFor="automat">
+          <label>
             <input type="checkbox"
               className="app-filter-class-input"
+              value="transmission"
               onClick={handleCheckbox} />
             Автомат</label>
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
+              value="transmission"
               onClick={handleCheckbox} />
             Механика</label>
         </aside>
@@ -63,17 +67,20 @@ const AppFilter = (props) => {
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              value="fuel"
+              onClick={handleCheckbox}/>
             Бензин</label>
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              value="fuel"
+              onClick={handleCheckbox}/>
             Газ</label>
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              value="fuel"
+              onClick={handleCheckbox}/>
             Дизель</label>
         </aside>
       </div>

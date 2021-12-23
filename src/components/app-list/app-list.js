@@ -5,13 +5,14 @@ const AppList = ({data}) => {
   
   const mapped = data.map(item => {
     const { id, ...itemProps } = item;
+   
     return (
       <AppItem
         key={id}
-        {...itemProps} />
+        {...itemProps}/>
     )
   })
-
+  console.log(mapped);
   return (
     <div className="app-content">
       <ul className="car-list">
