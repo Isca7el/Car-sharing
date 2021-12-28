@@ -3,7 +3,7 @@ import './app-list.css';
 
 const AppList = ({data}) => {
   
-  const mapped = data.map(item => {
+  const carList = data.map(item => {
     const { id, ...itemProps } = item;
    
     return (
@@ -12,11 +12,11 @@ const AppList = ({data}) => {
         {...itemProps}/>
     )
   })
-  console.log(mapped);
+  
   return (
     <div className="app-content">
       <ul className="car-list">
-        {mapped}
+        {carList}
       </ul>
     </div>
   );
