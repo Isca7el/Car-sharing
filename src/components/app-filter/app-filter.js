@@ -1,8 +1,6 @@
 import './app-filter.css';
 
-const AppFilter = (props) => {
-
-  const {handleCheckbox} = props;
+const AppFilter = ({onHandleCheckbox}) => {
 
   return (
     <div className="app-filter">
@@ -15,32 +13,32 @@ const AppFilter = (props) => {
               value="classify"
               id="Эконом"
               className="app-filter-class-input"
-              onClick={handleCheckbox}/>
+              onClick={onHandleCheckbox}/>
             Эконом</label>
           <label>
             <input type="checkbox"
               value="classify"
               id="Средний"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              onClick={onHandleCheckbox} />
             Средний</label>
           <label>
             <input type="checkbox"
               value="classify"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              onClick={onHandleCheckbox} />
             Бизнес</label>
           <label>
             <input type="checkbox"
               value="classify"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              onClick={onHandleCheckbox} />
             Внедорожник</label>
           <label>
             <input type="checkbox"
               value="classify"
               className="app-filter-class-input"
-              onClick={handleCheckbox} />
+              onClick={onHandleCheckbox} />
             Минивен</label>
         </aside>
       </div>
@@ -51,13 +49,13 @@ const AppFilter = (props) => {
             <input type="checkbox"
               className="app-filter-class-input"
               value="transmission"
-              onClick={handleCheckbox} />
+              onClick={onHandleCheckbox} />
             Автомат</label>
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
               value="transmission"
-              onClick={handleCheckbox} />
+              onClick={onHandleCheckbox} />
             Механика</label>
         </aside>
       </div>
@@ -68,19 +66,19 @@ const AppFilter = (props) => {
             <input type="checkbox"
               className="app-filter-class-input"
               value="fuel"
-              onClick={handleCheckbox}/>
+              onClick={onHandleCheckbox}/>
             Бензин</label>
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
               value="fuel"
-              onClick={handleCheckbox}/>
+              onClick={onHandleCheckbox}/>
             Газ</label>
           <label>
             <input type="checkbox"
               className="app-filter-class-input"
               value="fuel"
-              onClick={handleCheckbox}/>
+              onClick={onHandleCheckbox}/>
             Дизель</label>
         </aside>
       </div>

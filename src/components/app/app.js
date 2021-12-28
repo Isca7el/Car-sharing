@@ -26,7 +26,7 @@ constructor(props) {
   }
 }
 
-  handleCheckbox = e =>  {
+  onHandleCheckbox = e =>  {
     if (this.state.filter === e.target.value) {
       this.setState({filter: '',
       checked: false,
@@ -72,7 +72,7 @@ constructor(props) {
       <div className="app">
         <AppHeader/>
         <div className='app-body'>
-          <AppFilter handleCheckbox={this.handleCheckbox}/>
+          <AppFilter onHandleCheckbox={this.onHandleCheckbox}/>
           <AppList
           data={visibleData}/>
         </div>
