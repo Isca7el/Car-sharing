@@ -1,9 +1,7 @@
 import './app-item.css';
 
-const AppItem = (props) =>{
+const AppItem = ({name, rent, src, classify, transmission}) =>{
 
-  const {name, rent, src, classify, transmission} = props;
-  
     return(
       <div className="add-item">
         <h3 className="add-item-title">{name}</h3>
