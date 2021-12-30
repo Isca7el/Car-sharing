@@ -1,3 +1,7 @@
+a{
+  position: relative;
+  z-index: 999;
+}
 .add-item{
   display: flex;
   flex-direction: column;
