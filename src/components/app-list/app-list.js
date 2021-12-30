@@ -12,7 +12,11 @@ const AppList = ({data}) => {
         {...itemProps}/>
     )
   })
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 103df4a34c038005afb79a63374e5a667ca4a86b
   return (
     <div className="app-content">
       <ul className="car-list">
