@@ -11,6 +11,6 @@ const AppHeader = () => {
       <li className="app-header-item">On-line оплата</li>
     </ul>
   );
-}
+};
 
 export default AppHeader;

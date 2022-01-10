@@ -1,20 +1,33 @@
-import { Link } from 'react-router-dom';
+import { Component } from 'react';
 import './app-item.css';
 
-const AppItem = ({ name, rent, src, classify, transmission, onClickTar }) => {
-  const currency = ' €';
+class AppItem extends Component {
+  constructor() {
+    super(props);
+    this.state = { data};
+  }
 
-  return (
-    <Link to="/car-description"
-    onClick={onClickTar}>
-      <div className="add-item">
-        <h3 className="add-item-title">{name}</h3>
-        <p className="add-item-characters">{transmission}, {classify}</p>
-        <img src={`/images/${src}.jpg`} alt={src}></img>
-        <span className="add-item-price">{rent + currency}</span>
-      </div>
-    </Link>
-  )
+  consol.log(data);
+
+  router() {
+    return (
+      // const currency = ' €';
+      <p>Print</p>
+      // <div className="add-item">
+      //   <h3 className="add-item-title">{this.name}</h3>
+      //   <p className="add-item-characters">
+      //     {this.transmission}, {this.classify}
+      //   </p>
+      //   <img src={`/images/${src}.jpg`} alt={src}></img>
+      //   <span className="add-item-price">{this.rent + currency}</span>
+      // </div>
+    );
+  }
+
 }
 
-export default AppItem;
+// const AppItem = ({  }) => {
+
+// };
+
+// export default AppItem;

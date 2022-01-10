@@ -1,4 +1,4 @@
-.car-list{
+.car-list {
   margin: 20px;
   padding: 0;
   display: flex;
@@ -6,4 +6,3 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-

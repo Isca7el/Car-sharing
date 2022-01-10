@@ -1,16 +1,15 @@
-.app{
+.app {
   margin: 0 auto;
   max-width: 1000px;
 }
 
-.app-body{
+.app-body {
   width: 100%;
   height: 800px;
   display: flex;
   flex-direction: row;
 }
 
-.app-content{
+.app-content {
   width: 800px;
-  
 }

@@ -1,15 +1,15 @@
-a{
+a {
   position: relative;
   z-index: 999;
 }
-.add-item{
+.add-item {
   display: flex;
   flex-direction: column;
   width: 350px;
   position: relative;
 }
 
-.add-item-title{
+.add-item-title {
   margin: 10px;
   font-weight: 700;
   font-size: 24px;
@@ -18,17 +18,17 @@ a{
   color: #0062bd;
 }
 
-.add-item-characters{
+.add-item-characters {
   font-weight: 300;
   font-size: 18px;
   padding-bottom: 10px;
 }
 
-img{
- text-align: center;
+img {
+  text-align: center;
 }
 
-.add-item-price{
+.add-item-price {
   position: absolute;
   right: 10px;
   bottom: 5px;

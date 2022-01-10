@@ -1,4 +1,4 @@
-.app-filter{
+.app-filter {
   width: 200px;
   height: auto;
   background: #fff;
@@ -6,16 +6,16 @@
 }
 
 .app-filter_title {
-    color: #000;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 50px;
-    border-bottom: solid 1px #000;
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+  border-bottom: solid 1px #000;
 }
 
 .app-filter-class,
 .app-filter-transmission,
-.app-filter-fuel{
+.app-filter-fuel {
   display: flex;
   flex-direction: column;
 }
@@ -26,7 +26,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 /* 
 @keyframes click-wave {
