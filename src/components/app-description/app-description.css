@@ -1,5 +1,43 @@
-.description {
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.descriptiom-wrapper {
+  display: flex;
+  flex-direction: row;
   width: 1200px;
   height: 800px;
-  background-color: #a64f4f;
+}
+
+.img-car {
+  width: 500px;
+  height: auto;
+}
+
+.description-inner{
+  width: auto;
+  padding: 20px;
+}
+
+.add-item-characters{
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.add-item-title{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.book-button{
+  width: 150px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  background-color: #0062bd;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
 }

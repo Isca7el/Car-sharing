@@ -1,29 +1,32 @@
 /* eslint-disable no-unused-vars */
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import State from '../app/app.monk';
+import Modal from '../app-modal/app-modal';
 import './app-description.css';
 
 const AppDescription = () => {
   const { carID } = useParams();
   const [card, setCar] = useState({
     name: '',
-    rent: '',
+    rent: null,
     classify: '',
     transmission: '',
     fuel: '',
     src: '',
-    id: ''
+    id: null
   });
   const carArr = State.data;
-
   const car = carArr.filter((item) => item.id == carID);
-  console.log(...car);
+
+  useEffect(() => {
+    onCarLoaded();
+  });
 
   function onCarLoaded() {
-    setCar(...car);
+    setCar(car[0]);
   }
-  console.log(card);
 
   return <View card={card} />;
 };
@@ -32,21 +35,44 @@ const currency = ' €';
 
 const View = ({ card }) => {
   const { name, src, transmission, classify, rent } = card;
+  const [isModalOpened, setIsModalOpened] = useState(false);
+
+  console.log('isModalOpened', isModalOpened);
+  // const toggleModal = () => {
+  //   setModal(!modal);
+  // };
+
+  // if (modal) {
+  //   document.body.classList.add('active-modal');
+  // } else {
+  //   document.body.classList.remove('active-modal');
+  // }
+
   return (
     <div className="descriptiom-wrapper">
       <div className="descriptiom-image">
-        <img src={`/images/${src}.jpg`} alt={src}></img>
+        <img className="img-car" src={`/images/${src}.jpg`} alt={src}></img>
       </div>
       <div className="description-inner">
         <p className="add-item-characters">
           {transmission}, {classify}
         </p>
         <h3 className="add-item-title">{name}</h3>
-        <span className="add-item-price">{rent + currency}</span>
+        <button onClick={() => setIsModalOpened(true)} className="book-button" type="button">
+          Бронировать
+        </button>
       </div>
-      <img></img>
+      <Portal>
+        <Modal isOpened={isModalOpened} onClose={() => setIsModalOpened(false)} />
+      </Portal>
     </div>
   );
+};
+
+const Portal = (props) => {
+  const node = document.createElement('div');
+  document.body.appendChild(node);
+  return ReactDOM.createPortal(props.children, node);
 };
 
 export default AppDescription;
