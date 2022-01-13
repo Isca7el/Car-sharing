@@ -31,22 +31,9 @@ const AppDescription = () => {
   return <View card={card} />;
 };
 
-const currency = ' €';
-
 const View = ({ card }) => {
-  const { name, src, transmission, classify, rent } = card;
+  const { name, src, transmission, classify } = card;
   const [isModalOpened, setIsModalOpened] = useState(false);
-
-  console.log('isModalOpened', isModalOpened);
-  // const toggleModal = () => {
-  //   setModal(!modal);
-  // };
-
-  // if (modal) {
-  //   document.body.classList.add('active-modal');
-  // } else {
-  //   document.body.classList.remove('active-modal');
-  // }
 
   return (
     <div className="descriptiom-wrapper">
