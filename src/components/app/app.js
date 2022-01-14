@@ -6,6 +6,7 @@ import AppHeader from '../app-header/app-header';
 import AppFilter from '../app-filter/app-filter';
 import AppList from '../app-list/app-list';
 import AppDescription from '../app-description/app-description';
+import AppBooking from '../app-booking/app-booking';
 
 import './app.css';
 
@@ -65,6 +66,9 @@ class App extends Component {
               </Route>
               <Route exact path="/car-description/:carID">
                 <AppDescription />
+              </Route>
+              <Route exact path="/car-booking">
+                <AppBooking />
               </Route>
             </Switch>
           </div>
