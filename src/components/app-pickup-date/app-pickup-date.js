@@ -1,10 +1,49 @@
 import ReactDatePicker from 'react-datepicker';
 import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
+import ReactNotification, { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
 
-const PickupDate = ({ onClose, rent }) => {
+const PickupDate = ({ onClose, card }) => {
+  const { rent } = card;
   const [date, setDate] = useState({ startDate: new Date(), endDate: new Date() });
   const currency = ' €';
+
+  // eslint-disable-next-line no-unused-vars
+  const Notification = ({ onClose, handleDate }) => {
+    return (
+      <div className="notification">
+        <ReactNotification />
+        <Push />
+      </div>
+    );
+  };
+
+  function Push() {
+    const onHandleNotification = () => {
+      store.addNotification({
+        title: 'Вами забронирован',
+        message: 'Вы успешно забронировали',
+        type: 'success',
+        container: 'top-right',
+        insert: 'top',
+        animationIn: ['animate__animated', 'animate__fadeIn'],
+        animationOut: ['animate__animated', 'animate__fadeOut'],
+        dismiss: {
+          duration: 5000
+        }
+      });
+    };
+    return (
+      <div>
+        <button
+          className="book-buton"
+          onClick={((handleDate(date), onClose), onHandleNotification)}>
+          Бронировать
+        </button>
+      </div>
+    );
+  }
 
   const handleDateChange = (dateName, dateValue) => {
     let { startDate, endDate } = date;
@@ -22,8 +61,9 @@ const PickupDate = ({ onClose, rent }) => {
   };
 
   const handleDate = (arr) => {
-    localStorage.setItem('begin', arr.startDate);
-    localStorage.setItem('end', arr.endDate);
+    const exm = [];
+    exm.push(arr.startDate, arr.endDate, card);
+    localStorage.setItem('data', JSON.stringify(exm));
   };
 
   useEffect(() => {
@@ -34,8 +74,8 @@ const PickupDate = ({ onClose, rent }) => {
     let start = date.startDate;
     let end = date.endDate;
     const result = Math.round((end - start) / (60 * 60 * 24 * 1000));
-    console.log(result);
-    return <p>{result * rent + currency}</p>;
+    let sum = result * rent <= 0 ? null : result * rent + currency;
+    return <p>{sum}</p>;
   };
 
   return (
@@ -74,9 +114,7 @@ const PickupDate = ({ onClose, rent }) => {
       <button className="close-button" onClick={onClose}>
         X
       </button>
-      <button className="book-buton" onClick={handleDate(date)}>
-        Бронировать
-      </button>
+      <Notification />
     </div>
   );
 };

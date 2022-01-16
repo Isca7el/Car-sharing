@@ -45,18 +45,23 @@ const View = ({ card }) => {
           {transmission}, {classify}
         </p>
         <h3 className="add-item-title">{name}</h3>
-        <button onClick={() => setIsModalOpened(true)} className="book-button" type="button">
+        <button
+          onClick={() => setIsModalOpened(true)}
+          className="book-button"
+          type="button"
+          card={card}>
           Бронировать
         </button>
       </div>
-      <Portal>
-        <Modal isOpened={isModalOpened} onClose={() => setIsModalOpened(false)} />
+      <Portal card={card}>
+        <Modal isOpened={isModalOpened} onClose={() => setIsModalOpened(false)} card={card} />
       </Portal>
     </div>
   );
 };
 
-const Portal = (props) => {
+const Portal = (props, { card }) => {
+  card = { card };
   const node = document.createElement('div');
   document.body.appendChild(node);
   return ReactDOM.createPortal(props.children, node);

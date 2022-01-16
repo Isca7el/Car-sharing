@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import './app-header.css';
 
 const AppHeader = () => {
   return (
     <ul className="app-header-list">
       <li className="app-header-item">Парк авто</li>
-      <li className="app-header-item">Услуги</li>
+      <Link to="/car-booking">
+        <li className="app-header-item">Бронирование</li>
+      </Link>
       <li className="app-header-item">Условия проката</li>
       <li className="app-header-item">Отзывы</li>
       <li className="app-header-item">Контакты</li>
