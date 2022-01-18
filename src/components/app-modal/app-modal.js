@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import PickupDate from '../app-pickup-date/app-pickup-date';
-import AppNotification from '../app-notification/app-notification';
 import './app-modal.css';
 
 const Modal = ({ isOpened, onClose, card }) => {
-  const [modalActive, setModalActive] = useState(false);
   if (!isOpened) {
     return null;
   }
@@ -16,7 +13,6 @@ const Modal = ({ isOpened, onClose, card }) => {
       <div className="modal-content">
         <PickupDate onClose={onClose} card={card} />
       </div>
-      <AppNotification active={modalActive} setModalActive={setModalActive} />
     </div>
   );
 };

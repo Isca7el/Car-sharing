@@ -30,7 +30,7 @@ const PickupDate = ({ onClose, card }) => {
         animationIn: ['animate__animated', 'animate__fadeIn'],
         animationOut: ['animate__animated', 'animate__fadeOut'],
         dismiss: {
-          duration: 5000
+          duration: 2000
         }
       });
     };
@@ -61,9 +61,24 @@ const PickupDate = ({ onClose, card }) => {
   };
 
   const handleDate = (arr) => {
-    const exm = [];
-    exm.push(arr.startDate, arr.endDate, card);
-    localStorage.setItem('data', JSON.stringify(exm));
+    if (localStorage.length == 0) {
+      localStorage.setItem('data', []);
+    } else {
+      const data = localStorage.getItem('data');
+      if (data.length == 0) {
+        const data = [];
+        const exm = [];
+        exm.push(arr.startDate, arr.endDate, card);
+        data.push(exm);
+        localStorage.setItem('data', JSON.stringify(data));
+      } else {
+        const data = JSON.parse(localStorage.getItem('data'));
+        const exm = [];
+        exm.push(arr.startDate, arr.endDate, card);
+        data.push(exm);
+        localStorage.setItem('data', JSON.stringify(data));
+      }
+    }
   };
 
   useEffect(() => {
