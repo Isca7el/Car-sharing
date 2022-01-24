@@ -8,6 +8,7 @@ const PickupDate = ({ onClose, card }) => {
   const { rent } = card;
   const [date, setDate] = useState({ startDate: new Date(), endDate: new Date() });
   const currency = ' €';
+  let price;
 
   // eslint-disable-next-line no-unused-vars
   const Notification = ({ onClose, handleDate }) => {
@@ -67,14 +68,17 @@ const PickupDate = ({ onClose, card }) => {
       const data = localStorage.getItem('data');
       if (data.length == 0) {
         const data = [];
-        const exm = [];
-        exm.push(arr.startDate, arr.endDate, card);
+        const exm = card;
+        exm.start = arr.startDate;
+        exm.end = arr.endDate;
         data.push(exm);
         localStorage.setItem('data', JSON.stringify(data));
       } else {
         const data = JSON.parse(localStorage.getItem('data'));
-        const exm = [];
-        exm.push(arr.startDate, arr.endDate, card);
+        const exm = card;
+        exm.start = arr.startDate;
+        exm.end = arr.endDate;
+        exm.price = price;
         data.push(exm);
         localStorage.setItem('data', JSON.stringify(data));
       }
@@ -90,6 +94,7 @@ const PickupDate = ({ onClose, card }) => {
     let end = date.endDate;
     const result = Math.round((end - start) / (60 * 60 * 24 * 1000));
     let sum = result * rent <= 0 ? null : result * rent + currency;
+    price = sum;
     return <p>{sum}</p>;
   };
 
