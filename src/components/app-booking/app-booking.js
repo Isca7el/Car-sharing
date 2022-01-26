@@ -31,8 +31,12 @@ const AppBooking = () => {
     const id = theTarget.id;
     const filterList = local.filter((item) => item.id !== id);
     setLocal(filterList);
-    console.log(filterList);
-    localStorage.setItem('data', JSON.stringify(local));
+
+    if (filterList.length == 0) {
+      return (localStorage = null);
+    } else {
+      localStorage.setItem('data', JSON.stringify(local));
+    }
   };
 
   const bookList = local.map((item, i) => {

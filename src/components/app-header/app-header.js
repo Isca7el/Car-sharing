@@ -4,7 +4,9 @@ import './app-header.css';
 const AppHeader = () => {
   return (
     <ul className="app-header-list">
-      <li className="app-header-item">Парк авто</li>
+      <Link to="/">
+        <li className="app-header-item">Парк авто</li>
+      </Link>
       <Link to="/car-booking">
         <li className="app-header-item">Бронирование</li>
       </Link>

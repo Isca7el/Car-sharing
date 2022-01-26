@@ -11,7 +11,7 @@ const PickupDate = ({ onClose, card }) => {
   let price;
 
   // eslint-disable-next-line no-unused-vars
-  const Notification = ({ onClose, handleDate }) => {
+  const Notification = ({ handleDate, onClose }) => {
     return (
       <div className="notification">
         <ReactNotification />
@@ -35,11 +35,16 @@ const PickupDate = ({ onClose, card }) => {
         }
       });
     };
+
+    const handleButton = () => {
+      onClose();
+      handleDate(date);
+      onHandleNotification();
+    };
+
     return (
       <div>
-        <button
-          className="book-buton"
-          onClick={((handleDate(date), onClose), onHandleNotification)}>
+        <button className="book-buton" onClick={handleButton}>
           Бронировать
         </button>
       </div>
@@ -64,24 +69,21 @@ const PickupDate = ({ onClose, card }) => {
   const handleDate = (arr) => {
     if (localStorage.length == 0) {
       localStorage.setItem('data', []);
+      const data = [];
+      const exm = card;
+      exm.start = arr.startDate;
+      exm.end = arr.endDate;
+      exm.price = price;
+      data.push(exm);
+      localStorage.setItem('data', JSON.stringify(data));
     } else {
-      const data = localStorage.getItem('data');
-      if (data.length == 0) {
-        const data = [];
-        const exm = card;
-        exm.start = arr.startDate;
-        exm.end = arr.endDate;
-        data.push(exm);
-        localStorage.setItem('data', JSON.stringify(data));
-      } else {
-        const data = JSON.parse(localStorage.getItem('data'));
-        const exm = card;
-        exm.start = arr.startDate;
-        exm.end = arr.endDate;
-        exm.price = price;
-        data.push(exm);
-        localStorage.setItem('data', JSON.stringify(data));
-      }
+      const data = JSON.parse(localStorage.getItem('data'));
+      const exm = card;
+      exm.start = arr.startDate;
+      exm.end = arr.endDate;
+      exm.price = price;
+      data.push(exm);
+      localStorage.setItem('data', JSON.stringify(data));
     }
   };
 
