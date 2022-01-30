@@ -13,7 +13,6 @@ const AppBooking = () => {
 
   const onLocalLoaded = () => {
     const list = JSON.parse(localStorage.getItem('data'));
-    console.log(list);
     if (list == null) {
       return list;
     } else {
@@ -23,19 +22,19 @@ const AppBooking = () => {
       setLocal(list);
     }
     setLocal(list);
-    console.log(local);
   };
 
   const handleKey = (e) => {
     const theTarget = e.currentTarget.parentNode;
     const id = theTarget.id;
     const filterList = local.filter((item) => item.id !== id);
+    console.log(filterList);
     setLocal(filterList);
 
     if (filterList.length == 0) {
-      return (localStorage = null);
+      localStorage.removeItem('data');
     } else {
-      localStorage.setItem('data', JSON.stringify(local));
+      localStorage.setItem('data', JSON.stringify(filterList));
     }
   };
 
@@ -59,7 +58,6 @@ const AppBooking = () => {
       </li>
     );
   });
-  console.log(local);
 
   const content = list == null ? <Error /> : bookList;
 
