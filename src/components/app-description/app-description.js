@@ -15,6 +15,16 @@ const AppDescription = () => {
     transmission: '',
     fuel: '',
     src: '',
+    power: '',
+    drive_unit: '',
+    engine_capacity: '',
+    acceleration: '',
+    consumption: '',
+    trunk_volume: '',
+    fuel_tank_volume: '',
+    weight: '',
+    doors: null,
+    seats: null,
     id: null
   });
   const carArr = State.data;
@@ -32,7 +42,20 @@ const AppDescription = () => {
 };
 
 const View = ({ card }) => {
-  const { name, src, transmission, classify } = card;
+  const {
+    name,
+    src,
+    transmission,
+    classify,
+    engine_capacity,
+    power,
+    consumption,
+    acceleration,
+    trunk_volume,
+    doors,
+    seats,
+    weight
+  } = card;
   const [isModalOpened, setIsModalOpened] = useState(false);
 
   return (
@@ -45,6 +68,17 @@ const View = ({ card }) => {
           {transmission}, {classify}
         </p>
         <h3 className="add-item-title">{name}</h3>
+        <h4 className="">Технические характеристики</h4>
+        <p>Мощность двигателя: {power}</p>
+        <p>Объем двигателя: {engine_capacity}</p>
+        <p>Расход толива: {consumption}</p>
+        <p>Разгон до 100 км/ч: {acceleration}</p>
+        <p>Расход топлива на 100 км: {acceleration}</p>
+        <p>Обьем бака: {acceleration}</p>
+        <p>Обьем багажника: {trunk_volume}</p>
+        <p>Количество дверей: {doors}</p>
+        <p>Количество посадочных мест: {seats}</p>
+        <p>Масса: {weight}</p>
         <button
           onClick={() => setIsModalOpened(true)}
           className="book-button"
