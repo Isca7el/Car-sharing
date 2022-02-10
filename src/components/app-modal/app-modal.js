@@ -8,7 +8,7 @@ const Modal = ({ isOpened, onClose, card }) => {
   }
 
   return (
-    <div className="modal">
+    <div className="modal-app">
       <div className="overlay pickup-date" onClick={onClose}></div>
       <div className="modal-content">
         <PickupDate onClose={onClose} card={card} />

@@ -8,7 +8,7 @@ import AppList from '../app-list/app-list';
 import AppDescription from '../app-description/app-description';
 import AppBooking from '../app-booking/app-booking';
 
-import './app.css';
+import './app.scss';
 
 class App extends Component {
   constructor(props) {

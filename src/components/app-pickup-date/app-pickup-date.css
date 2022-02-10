@@ -1,0 +1,135 @@
+@media (min-width: 1200px) {
+  h3{
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  .form-control{
+    width: 600px;
+    
+  }
+  .react-datepicker-wrapper{
+    padding-bottom: 15px;
+  }
+  .close-button{
+    position: absolute;
+    top:10px;
+    right: 20px;
+    border:none;
+    width: 20px;
+    height: 20px;
+  }
+  .react-datepicker__close-icon{
+    background-image: url("./close_red.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+  }
+  .react-datepicker__close-icon::after{
+    display:none;
+  }
+  .book-buton{
+      width: 150px;
+      height: 30px;
+      border-radius: 50px;
+      border: none;
+      background-color: #0062bd;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+ h3{
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .form-control{
+    width: 300px;
+    
+  }
+  .react-datepicker-wrapper{
+    padding-bottom: 15px;
+  }
+  .close-button{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border:none;
+    width: 20px;
+    height: 20px;
+  }
+  .react-datepicker__close-icon{
+    background-image: url("./close_red.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+  }
+  .react-datepicker__close-icon::after{
+    display:none;
+  }
+  .book-buton{
+      width: 150px;
+      height: 30px;
+      border-radius: 50px;
+      border: none;
+      background-color: #0062bd;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 30px;
+  } 
+}
+
+@media (max-width: 767px){
+  h3{
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .form-control{
+    width: 200px;
+    
+  }
+  .react-datepicker-wrapper{
+    padding-bottom: 10px;
+  }
+  .close-button{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border:none;
+    width: 20px;
+    height: 20px;
+  }
+  .react-datepicker__close-icon{
+    background-image: url("./close_red.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+  }
+  .react-datepicker__close-icon::after{
+    display:none;
+  }
+  .book-buton{
+      width: 150px;
+      height: 30px;
+      border-radius: 50px;
+      border: none;
+      background-color: #0062bd;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+  }
+}

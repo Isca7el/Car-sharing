@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import ReactNotification, { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
+import './app-pickup-date.css';
 
 const PickupDate = ({ onClose, card }) => {
   const { rent } = card;
@@ -39,7 +40,7 @@ const PickupDate = ({ onClose, card }) => {
     const handleButton = () => {
       onClose();
       handleDate(date);
-      onHandleNotification();
+      Push();
     };
 
     return (
@@ -50,6 +51,13 @@ const PickupDate = ({ onClose, card }) => {
       </div>
     );
   }
+
+  const style = {
+    backgroundImage: 'url(/close.svg)',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  };
 
   const handleDateChange = (dateName, dateValue) => {
     let { startDate, endDate } = date;
@@ -67,7 +75,7 @@ const PickupDate = ({ onClose, card }) => {
   };
 
   const handleDate = (arr) => {
-    if (localStorage.length == 0) {
+    if (localStorage.data) {
       localStorage.setItem('data', []);
       const data = [];
       const exm = card;
@@ -133,9 +141,7 @@ const PickupDate = ({ onClose, card }) => {
         timeCaption="time"
       />
       <ShowDate />
-      <button className="close-button" onClick={onClose}>
-        X
-      </button>
+      <button className="close-button" onClick={onClose} style={style}></button>
       <Notification />
     </div>
   );

@@ -1,0 +1,229 @@
+@media (min-width: 1200px) {
+  .booking-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+  .boking-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    justify-content: space-between;
+  }
+  .date {
+    margin-right: 20px;
+  }
+  .book {
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+  .picked-date {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex-grow: 2;
+  }
+  .car {
+    width: auto;
+  }
+
+  .book-img {
+    width: 350px;
+    height: auto;
+  }
+
+  .book-cancel {
+    width: 150px;
+    height: auto;
+    border-radius: 50px;
+    border: none;
+    background-color: #0062bd;
+    color: white;
+  }
+
+  .price {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .book-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .booking-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+  .book-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .title-book {
+    font-size: 24px;
+  }
+  .book-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 5;
+  }
+  .boking-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    justify-content: space-between;
+  }
+  .date {
+    margin-right: 20px;
+  }
+  .book {
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+  .picked-date {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    flex-grow: 2;
+  }
+  .car {
+    width: auto;
+  }
+
+  .book-img {
+    width: 250px;
+    height: auto;
+  }
+
+  .book-cancel {
+    width: 130px;
+    height: auto;
+    font-size: 14px;
+    border-radius: 50px;
+    border: none;
+    background-color: #0062bd;
+    color: white;
+  }
+
+  .price {
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 767px) {
+  .booking-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+  .book-title {
+    font-size: 20px;
+    font-weight: 50;
+  }
+  .title-book {
+    font-size: 24px;
+  }
+  .boking-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .boking-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    justify-content: space-between;
+  }
+  .date {
+    margin-right: 20px;
+  }
+  .book {
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  .picked-date {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    flex-grow: 2;
+  }
+  .car {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .book-img {
+    width: 420px;
+    height: auto;
+  }
+
+  .book-cancel {
+    width: 130px;
+    height: auto;
+    font-size: 14px;
+    border-radius: 50px;
+    border: none;
+    background-color: #0062bd;
+    color: white;
+  }
+
+  .price {
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .book-information {
+    min-width: 480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .book-price{
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

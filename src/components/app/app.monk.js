@@ -22,7 +22,7 @@ const State = {
     {
       name: 'Toyota Corolla',
       rent: 22,
-      classify: 'Автомат',
+      classify: 'Средний',
       transmission: 'Автомат',
       fuel: 'Бензин',
       src: 'Corolla',
@@ -41,7 +41,7 @@ const State = {
     {
       name: 'Honda Civic AT',
       rent: 24,
-      classify: 'Автомат',
+      classify: 'Средний',
       transmission: 'Автомат',
       fuel: 'Бензин',
       src: 'honda-civic-at',
@@ -60,7 +60,7 @@ const State = {
     {
       name: 'Peugeot 301',
       rent: 25,
-      classify: 'Автомат',
+      classify: 'Средний',
       transmission: 'Автомат',
       fuel: 'Бензин',
       src: 'Peugeot-301',

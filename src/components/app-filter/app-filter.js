@@ -7,7 +7,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
       <div className="app-filter-class">
         <h3 className="app-filter-class-title">Класс авто</h3>
         <aside className="app-filter-class-wrapper">
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               value="classify"
@@ -17,7 +17,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Эконом
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               value="classify"
@@ -27,7 +27,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Средний
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               value="classify"
@@ -36,7 +36,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Бизнес
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               value="classify"
@@ -45,7 +45,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Внедорожник
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               value="classify"
@@ -59,7 +59,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
       <div className="app-filter-transmission">
         <h3 className="app-filter-transmission-title">Трансмиссия</h3>
         <aside className="app-filter-transmission-wrapper">
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               className="app-filter-class-input"
@@ -68,7 +68,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Автомат
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               className="app-filter-class-input"
@@ -82,7 +82,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
       <div className="app-filter-fuel">
         <h3 className="app-filter-fuel-title">Тип топлива</h3>
         <aside className="app-filter-fuel-wrapper">
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               className="app-filter-class-input"
@@ -91,7 +91,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Бензин
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               className="app-filter-class-input"
@@ -100,7 +100,7 @@ const AppFilter = ({ onHandleCheckbox }) => {
             />
             Газ
           </label>
-          <label>
+          <label className="app-filter-label">
             <input
               type="checkbox"
               className="app-filter-class-input"

@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import State from '../app/app.monk';
 import Modal from '../app-modal/app-modal';
-import './app-description.css';
+import './app-description.scss';
+import Table from 'react-bootstrap/Table';
 
 const AppDescription = () => {
   const { carID } = useParams();
@@ -64,21 +65,56 @@ const View = ({ card }) => {
         <img className="img-car" src={`/images/${src}.jpg`} alt={src}></img>
       </div>
       <div className="description-inner">
-        <p className="add-item-characters">
-          {transmission}, {classify}
-        </p>
-        <h3 className="add-item-title">{name}</h3>
-        <h4 className="">Технические характеристики</h4>
-        <p>Мощность двигателя: {power}</p>
-        <p>Объем двигателя: {engine_capacity}</p>
-        <p>Расход толива: {consumption}</p>
-        <p>Разгон до 100 км/ч: {acceleration}</p>
-        <p>Расход топлива на 100 км: {acceleration}</p>
-        <p>Обьем бака: {acceleration}</p>
-        <p>Обьем багажника: {trunk_volume}</p>
-        <p>Количество дверей: {doors}</p>
-        <p>Количество посадочных мест: {seats}</p>
-        <p>Масса: {weight}</p>
+        <div className="title">
+          <h3 className="add-item-title">{name}</h3>
+          <p className="add-item-characters">
+            {transmission}, {classify}
+          </p>
+        </div>
+        <div className="technical">
+          <h6 className="">Технические характеристики двигателя</h6>
+          <Table responsive="lg" striped bordered hover>
+            <thead>
+              <tr>
+                <th>Мощность двигателя</th>
+                <th>Объем двигателя</th>
+                <th>Расход толива</th>
+                <th>Разгон до 100 км/ч</th>
+                <th>Расход топлива на 100 км</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{power}</td>
+                <td>{engine_capacity}</td>
+                <td>{consumption}</td>
+                <td>{acceleration}</td>
+                <td>{acceleration}</td>
+              </tr>
+            </tbody>
+          </Table>
+          <h6 className="">Технические характеристики кузова</h6>
+          <Table responsive="lg" striped bordered hover>
+            <thead>
+              <tr>
+                <th>Обьем бака</th>
+                <th>Обьем багажника</th>
+                <th>Количество дверей</th>
+                <th>Количество посадочных мест</th>
+                <th>Масса</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{acceleration}</td>
+                <td>{trunk_volume}</td>
+                <td>{doors}</td>
+                <td>{seats}</td>
+                <td>{weight}</td>
+              </tr>
+            </tbody>
+          </Table>
+        </div>
         <button
           onClick={() => setIsModalOpened(true)}
           className="book-button"

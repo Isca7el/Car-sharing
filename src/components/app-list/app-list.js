@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import './app-list.css';
+import './app-list.scss';
 
 const AppList = ({ data }) => {
   const currency = ' €';
   const carList = data.map((item, i) => {
     return (
-      <li className="" key={i}>
+      <li key={i} timeout={300} className="car-item">
         <Link to={`/car-description/${item.id}`}>
           <div className="add-item">
             <h3 className="add-item-title">{item.name}</h3>
