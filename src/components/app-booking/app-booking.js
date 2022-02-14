@@ -12,7 +12,6 @@ const AppBooking = () => {
   const list = JSON.parse(localStorage.getItem('data'));
 
   const onLocalLoaded = () => {
-    const list = JSON.parse(localStorage.getItem('data'));
     if (list == null) {
       return list;
     } else {
@@ -25,7 +24,7 @@ const AppBooking = () => {
   };
 
   const handleKey = (e) => {
-    const theTarget = e.currentTarget.parentNode;
+    const theTarget = e.currentTarget.parentNode.parentNode;
     const id = theTarget.id;
     const filterList = local.filter((item) => item.id !== id);
     setLocal(filterList);
@@ -34,6 +33,7 @@ const AppBooking = () => {
       localStorage.removeItem('data');
     } else {
       localStorage.setItem('data', JSON.stringify(filterList));
+      console.log(filterList);
     }
   };
 

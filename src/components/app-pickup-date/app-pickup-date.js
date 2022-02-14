@@ -52,13 +52,6 @@ const PickupDate = ({ onClose, card }) => {
     );
   }
 
-  const style = {
-    backgroundImage: 'url(/close.svg)',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
-  };
-
   const handleDateChange = (dateName, dateValue) => {
     let { startDate, endDate } = date;
 
@@ -75,7 +68,7 @@ const PickupDate = ({ onClose, card }) => {
   };
 
   const handleDate = (arr) => {
-    if (localStorage.data) {
+    if (localStorage.getItem('data') == null) {
       localStorage.setItem('data', []);
       const data = [];
       const exm = card;
@@ -141,7 +134,7 @@ const PickupDate = ({ onClose, card }) => {
         timeCaption="time"
       />
       <ShowDate />
-      <button className="close-button" onClick={onClose} style={style}></button>
+      <button className="close-button" onClick={onClose}></button>
       <Notification />
     </div>
   );
