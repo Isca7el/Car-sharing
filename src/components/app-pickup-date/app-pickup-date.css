@@ -17,6 +17,7 @@
     border:none;
     width: 20px;
     height: 20px;
+    background-image: url("./close.svg");
   }
   .react-datepicker__close-icon{
     background-image: url("./close_red.png");
@@ -61,8 +62,9 @@
     top:10px;
     right: 10px;
     border:none;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    background-image: url("./close.svg");
   }
   .react-datepicker__close-icon{
     background-image: url("./close_red.png");
@@ -107,8 +109,9 @@
     top:10px;
     right: 10px;
     border:none;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    background-image: url("./close.svg");
   }
   .react-datepicker__close-icon{
     background-image: url("./close_red.png");

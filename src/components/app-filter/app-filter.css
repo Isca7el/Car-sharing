@@ -11,6 +11,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 50px;
+    text-align: center;
     border-bottom: solid 1px #000;
   }
   
@@ -20,6 +21,8 @@
     width: 200px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
+    padding-left: 20px;
   }
   
   .app-filter-class-wrapper,
@@ -91,8 +94,9 @@
   .app-filter_title {
     color: #000;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 50px;
+    text-align: center;
     border-bottom: solid 1px #000;
   }
   
@@ -102,6 +106,8 @@
     width: 120px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    padding-left: 10px;
   }
   
   .app-filter-class-wrapper,
@@ -114,8 +120,59 @@
   .app-filter-fuel-title,
   .app-filter-transmission-title,
   .app-filter-class-title{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
+  }
+
+  .app-filter-class-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 4px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .app-filter-class-input {
+    background: #9faab7;
+  }
+  .app-filter-class-input:checked {
+    background: #40e0d0;
+  }
+  .app-filter-class-input:checked::before {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    line-height: 23px;
+  }
+  .app-filter-class-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
   }
 }
 
@@ -131,6 +188,7 @@
     font-weight: 700;
     font-size: 15px;
     line-height: 30px;
+    text-align: center;
     border-bottom: solid 1px #000;
   }
   .app-filter-class,
@@ -139,6 +197,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    padding-left: 5px;
   }
   .app-filter-class-wrapper,
   .app-filter-transmission-wrapper,
@@ -147,7 +207,7 @@
     flex-direction: column;
   }
   .app-filter-label{
-    font-size: 16px;
+    font-size: 13px;
     line-height: 20px;
   }
   .app-filter-fuel-title,
@@ -155,5 +215,56 @@
   .app-filter-class-title{
     font-size: 14px;
     font-weight: 700;
+  }
+
+  .app-filter-class-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 1px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .app-filter-class-input {
+    background: #9faab7;
+  }
+  .app-filter-class-input:checked {
+    background: #40e0d0;
+  }
+  .app-filter-class-input:checked::before {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    line-height: 20px;
+  }
+  .app-filter-class-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
   }
 }

@@ -1,7 +1,9 @@
 import ReactDatePicker from 'react-datepicker';
+import ReactDOM from 'react-dom';
 import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import ReactNotification, { store } from 'react-notifications-component';
+import ModalClose from '../app-modal-close/app-modal-close';
 import 'react-notifications-component/dist/theme.css';
 import './app-pickup-date.css';
 
@@ -10,6 +12,7 @@ const PickupDate = ({ onClose, card }) => {
   const [date, setDate] = useState({ startDate: new Date(), endDate: new Date() });
   const currency = ' €';
   let price;
+  const [isModalClosed, setIsModalClosed] = useState(false);
 
   // eslint-disable-next-line no-unused-vars
   const Notification = ({ handleDate, onClose }) => {
@@ -134,10 +137,22 @@ const PickupDate = ({ onClose, card }) => {
         timeCaption="time"
       />
       <ShowDate />
-      <button className="close-button" onClick={onClose}></button>
+      <button className="close-button" onClick={() => setIsModalClosed(true)}></button>
       <Notification />
+      <PortalModal>
+        <ModalClose
+          isModalCloseOpened={isModalClosed}
+          onClosed={() => setIsModalClosed(false)}
+          onClose={onClose}></ModalClose>
+      </PortalModal>
     </div>
   );
+};
+
+const PortalModal = (props) => {
+  const node = document.createElement('div');
+  document.body.appendChild(node);
+  return ReactDOM.createPortal(props.children, node);
 };
 
 export default PickupDate;

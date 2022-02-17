@@ -1,18 +1,13 @@
-import img from './error.gif';
+import { Link } from 'react-router-dom';
+import './app-error.css';
 
 const Error = () => {
   return (
-    <img
-      style={{
-        display: 'block',
-        width: '250px',
-        height: '250px',
-        objectFit: 'contain',
-        margin: '0 auto'
-      }}
-      src={img}
-      alt="Error"
-    />
+    <ul className="error">
+      <Link to="/">
+        <li className="error-title">У вас нет забронированного авто</li>
+      </Link>
+    </ul>
   );
 };
 

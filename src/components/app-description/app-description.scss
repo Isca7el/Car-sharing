@@ -1,6 +1,12 @@
+body.active-modal {
+  overflow-y: hidden;
+}
+
 @media (min-width: 1200px) {
-  body.active-modal {
-    overflow-y: hidden;
+
+  .img-car {
+    width: 400px;
+    height: auto;
   }
   
   .descriptiom-wrapper {
@@ -33,6 +39,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 50px;
+    margin-right: 20px;
   }
 
   .book-button {
@@ -90,6 +97,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 50px;
+    margin-right: 20px;
   }
 
   .book-button {
@@ -147,6 +155,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 50px;
+    margin-right: 20px;
   }
 
   .book-button {

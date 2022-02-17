@@ -7,13 +7,15 @@ const AppList = ({ data }) => {
     return (
       <li key={i} timeout={300} className="car-item">
         <Link to={`/car-description/${item.id}`}>
-          <div className="add-item">
-            <h3 className="add-item-title">{item.name}</h3>
-            <p className="add-item-characters">
-              {item.transmission}, {item.classify}
-            </p>
-            <img src={`/images/${item.src}.jpg`} alt={item.src}></img>
-            <span className="add-item-price">{item.rent + currency}</span>
+          <div className="add-item-wrapper">
+            <div className="add-item">
+              <h3 className="add-title">{item.name}</h3>
+              <p className="add-item-characters">
+                {item.transmission}, {item.classify}
+              </p>
+              <img src={`/images/${item.src}.jpg`} alt={item.src}></img>
+              <span className="add-item-price">{item.rent + currency}</span>
+            </div>
           </div>
         </Link>
       </li>

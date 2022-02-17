@@ -1,0 +1,7 @@
+.error-title{
+  list-style-type: none;
+  padding-top: 50px;
+  font-size: 36px;
+  cursor: pointer;
+  color: black;
+}

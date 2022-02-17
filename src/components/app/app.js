@@ -64,10 +64,10 @@ class App extends Component {
                 <AppFilter onHandleCheckbox={this.onHandleCheckbox} />
                 <AppList data={visibleData} />
               </Route>
-              <Route exact path="/car-description/:carID">
+              <Route path="/car-description/:carID">
                 <AppDescription />
               </Route>
-              <Route exact path="/car-booking">
+              <Route path="/car-booking">
                 <AppBooking />
               </Route>
             </Switch>
