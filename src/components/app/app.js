@@ -1,6 +1,5 @@
-import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { useState } from 'react';
 import State from './app.monk';
 import AppHeader from '../app-header/app-header';
 import AppFilter from '../app-filter/app-filter';
@@ -10,22 +9,25 @@ import AppBooking from '../app-booking/app-booking';
 
 import './app.scss';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = State;
-  }
+const App = () => {
+  const state = State;
+  const { data } = state;
+  const [filterParams, setFilterStr] = useState({
+    filter: '',
+    checked: '',
+    term: ''
+  });
 
-  onHandleCheckbox = (e) => {
-    if (this.state.filter === e.target.value) {
-      this.setState({
+  const onHandleCheckbox = (e) => {
+    const currentCheckbox = e.target.parentNode.textContent;
+    if (filterParams.filter === e.target.value) {
+      setFilterStr({
         filter: '',
         checked: false,
         term: ''
       });
     } else {
-      const currentCheckbox = e.target.parentNode.textContent;
-      this.setState({
+      setFilterStr({
         filter: e.target.value,
         checked: true,
         term: currentCheckbox
@@ -33,7 +35,7 @@ class App extends Component {
     }
   };
 
-  filterPost = (items, filter, term) => {
+  const filterPost = (items, filter, term) => {
     switch (filter) {
       case 'classify': {
         return items.filter((item) => item.classify === term);
@@ -49,33 +51,29 @@ class App extends Component {
     }
   };
 
-  render() {
-    const { data, filter, term } = this.state;
+  const visibleData = filterPost(data, filterParams.filter, filterParams.term);
 
-    const visibleData = this.filterPost(data, filter, term);
-
-    return (
-      <Router>
-        <div className="app">
-          <AppHeader />
-          <div className="app-body">
-            <Switch>
-              <Route exact path="/">
-                <AppFilter onHandleCheckbox={this.onHandleCheckbox} />
-                <AppList data={visibleData} />
-              </Route>
-              <Route path="/car-description/:carID">
-                <AppDescription />
-              </Route>
-              <Route path="/car-booking">
-                <AppBooking />
-              </Route>
-            </Switch>
-          </div>
+  return (
+    <Router>
+      <div className="app">
+        <AppHeader />
+        <div className="app-body">
+          <Switch>
+            <Route exact path="/">
+              <AppFilter onHandleCheckbox={onHandleCheckbox} />
+              <AppList data={visibleData} />
+            </Route>
+            <Route path="/car-description/:carID">
+              <AppDescription />
+            </Route>
+            <Route path="/car-booking">
+              <AppBooking />
+            </Route>
+          </Switch>
         </div>
-      </Router>
-    );
-  }
-}
+      </div>
+    </Router>
+  );
+};
 
 export default App;
