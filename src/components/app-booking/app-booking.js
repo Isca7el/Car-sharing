@@ -33,7 +33,6 @@ const AppBooking = () => {
       localStorage.removeItem('data');
     } else {
       localStorage.setItem('data', JSON.stringify(filterList));
-      console.log(filterList);
     }
   };
 

@@ -6,6 +6,8 @@ import AppFilter from '../app-filter/app-filter';
 import AppList from '../app-list/app-list';
 import AppDescription from '../app-description/app-description';
 import AppBooking from '../app-booking/app-booking';
+import { ReactNotifications } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
 
 import './app.scss';
 
@@ -55,6 +57,7 @@ const App = () => {
 
   return (
     <Router>
+      <ReactNotifications />
       <div className="app">
         <AppHeader />
         <div className="app-body">

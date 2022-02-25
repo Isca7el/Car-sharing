@@ -2,9 +2,8 @@ import ReactDatePicker from 'react-datepicker';
 import ReactDOM from 'react-dom';
 import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
-import ReactNotification, { store } from 'react-notifications-component';
+import { Store } from 'react-notifications-component';
 import ModalClose from '../app-modal-close/app-modal-close';
-import 'react-notifications-component/dist/theme.css';
 import './app-pickup-date.css';
 
 const PickupDate = ({ onClose, card }) => {
@@ -18,41 +17,43 @@ const PickupDate = ({ onClose, card }) => {
   const Notification = ({ handleDate, onClose }) => {
     return (
       <div className="notification">
-        <ReactNotification />
-        <Push />
+        <div>
+          <button className="book-buton" onClick={handleButton}>
+            Бронировать
+          </button>
+        </div>
       </div>
     );
   };
 
   function Push() {
-    const onHandleNotification = () => {
-      store.addNotification({
-        title: 'Вами забронирован',
-        message: 'Вы успешно забронировали',
-        type: 'success',
-        container: 'top-right',
-        insert: 'top',
-        animationIn: ['animate__animated', 'animate__fadeIn'],
-        animationOut: ['animate__animated', 'animate__fadeOut'],
-        dismiss: {
-          duration: 2000
-        }
-      });
-    };
+    Store.addNotification({
+      title: 'Вами забронирован',
+      message: 'Вы успешно забронировали',
+      type: 'success',
+      container: 'top-right',
+      insert: 'top',
+      animationIn: ['animate__animated', 'animate__fadeIn'],
+      animationOut: ['animate__animated', 'animate__fadeOut'],
+      dismiss: {
+        duration: 5000
+      }
+    });
+  }
 
-    const handleButton = () => {
-      onClose();
-      handleDate(date);
-      Push();
-    };
-
-    return (
-      <div>
-        <button className="book-buton" onClick={handleButton}>
-          Бронировать
-        </button>
-      </div>
-    );
+  function PushErrorDate() {
+    Store.addNotification({
+      title: 'Вы ввели не правильную дату',
+      message: 'Вы разбронировали дату на одно число',
+      type: 'warning',
+      container: 'top-left',
+      insert: 'top',
+      animationIn: ['animate__animated', 'animate__fadeIn'],
+      animationOut: ['animate__animated', 'animate__fadeOut'],
+      dismiss: {
+        duration: 5000
+      }
+    });
   }
 
   const handleDateChange = (dateName, dateValue) => {
@@ -102,6 +103,21 @@ const PickupDate = ({ onClose, card }) => {
     let sum = result * rent <= 0 ? null : result * rent + currency;
     price = sum;
     return <p>{sum}</p>;
+  };
+
+  const handleButton = () => {
+    const startMonth = date.startDate.toString().slice(4, 7);
+    const endMonth = date.endDate.toString().slice(4, 7);
+    const startHour = date.startDate.toString().slice(8, 10);
+    const endtHour = date.endDate.toString().slice(8, 10);
+
+    if (startMonth == endMonth && startHour == endtHour) {
+      PushErrorDate();
+    } else {
+      onClose();
+      handleDate(date);
+      Push();
+    }
   };
 
   return (
